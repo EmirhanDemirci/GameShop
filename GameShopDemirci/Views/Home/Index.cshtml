@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="jumbotron">
+    <h1>GameShopDemirci!</h1>
+    <p>...</p>
+    <p>  <button class="btn btn-default" type="submit">Login</button>
+</div>
+<div class="row">
+    <div class="col-md-3 nice">
+        <h2><img src="~/images/PlatForms/pc.png" width="175" height="175" id="image" /></h2>
+        <div class="overlay" id="pc">
+            <div> <a asp-area="" asp-controller="Home" asp-action="PcView" class="text">PC</a></div>
+        </div>
+    </div>
+    <div class="col-md-3 nice">
+        <h2><img src="~/images/PlatForms/ps4.png" width="175" height="175" id="image1" /></h2>
+        <div class="overlay">
+            <div class="text"id="ps4">PS4</div>
+        </div>
+        @*  <img src="~/images/banner1.svg" alt="Mountain View">*@
+    </div>
+    <div class="col-md-3 nice">
+        <h2><img src="~/images/PlatForms/xbox.png" width="175" height="175" id="image2" /></h2>
+        <div class="overlay">
+            <div class="text"id="xbox">XBOX</div>
+        </div>
+    </div>
+    <div class="col-md-3 nice">
+        <h2><img src="~/images/PlatForms/nintendoSwitch.png" width="175" id="175" class="image3" /></h2>
+        <div class="overlay">
+            <div class="text" id="nintendo">Switch</div>
+        </div>
+    </div>
+</div>
