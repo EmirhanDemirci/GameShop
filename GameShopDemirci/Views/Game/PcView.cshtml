@@ -1,0 +1,15 @@
+﻿@model List<Games>
+
+<link href="~/css/contact.css" rel="stylesheet" />
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
+@{
+    foreach (var game in Model)
+    {
+        <label> @game.gameName</label>
+        <label> @game.gameDescription</label>
+        <label> @game.gameId</label>
+        <img src="~/images/Games/@game.gameImg" />
+    }
+}

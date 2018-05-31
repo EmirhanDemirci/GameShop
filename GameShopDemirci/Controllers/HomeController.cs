@@ -21,18 +21,7 @@ namespace GameShopDemirci.Controllers
 
             return View();
         }
-        public IActionResult PcView()
-        {
-            return View();
-        }
-        public IActionResult Ps4View()
-        {
-            return View();
-        }
-        public IActionResult NintendoView()
-        {
-            return View();
-        }
+     
 
         public IActionResult Contact()
         {

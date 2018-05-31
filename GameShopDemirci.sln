@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2043
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameShopDemirci", "GameShopDemirci\GameShopDemirci.csproj", "{C51AB718-4270-415F-A0B3-AAC8FA1F8D1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameShopDemirci", "GameShopDemirci\GameShopDemirci.csproj", "{C51AB718-4270-415F-A0B3-AAC8FA1F8D1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

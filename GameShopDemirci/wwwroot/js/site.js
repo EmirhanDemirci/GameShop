@@ -1,13 +1,13 @@
 ﻿// Write your JavaScript code.
 $("#pc").click(function () {
-    alert("pc is clicked");
+//    alert("pc is clicked");
 });
 $("#ps4").click(function () {
-    alert("ps 4 is clicked");
+//    alert("ps 4 is clicked");
 });
 $("#xbox").click(function () {
-    alert("XBOX is clicked");
+//    alert("XBOX is clicked");
 });
 $("#nintendo").click(function () {
-    alert("Nintendo is clicked");
+//    alert("Nintendo is clicked");
 });
