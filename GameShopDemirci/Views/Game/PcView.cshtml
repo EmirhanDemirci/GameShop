@@ -4,12 +4,18 @@
 @section Scripts {
     @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
 }
+
 @{
     foreach (var game in Model)
     {
+<div class="container-games">
+
+    <div id="games">
+        <img src="~/images/Games/@game.gameImg" width="200" height="300" />
         <label> @game.gameName</label>
         <label> @game.gameDescription</label>
-        <label> @game.gameId</label>
-        <img src="~/images/Games/@game.gameImg" />
+        <label> €@game.gamePrice</label>
+    </div> 
+</div>
     }
 }

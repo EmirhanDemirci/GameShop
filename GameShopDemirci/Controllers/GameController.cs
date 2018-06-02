@@ -43,7 +43,8 @@ namespace GameShopDemirci.Controllers
                         gameId = reader.GetInt32(0),
                         gameName = reader.GetString(1),
                         gameDescription = reader.GetString(2),
-                        gameImg = reader.GetString(3)
+                        gameImg = reader.GetString(3),
+                        gamePrice = reader.GetDecimal(4)
                     };
                     games.Add(game);
                 }

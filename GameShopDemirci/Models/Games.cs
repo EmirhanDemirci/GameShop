@@ -11,6 +11,7 @@ namespace GameShopDemirci.Models
         public string gameName { get; set; }
         public string gameDescription { get; set; }
         public string gameImg { get; set; }
+        public decimal gamePrice { get; set; }
 
 
     }
