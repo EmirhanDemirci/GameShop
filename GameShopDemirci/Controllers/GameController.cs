@@ -21,14 +21,29 @@ namespace GameShopDemirci.Controllers
       
         public IActionResult PcView(Games objGames)
         {
-            var games = GetGames();
+            var games = GetGames(id:0);
             return View(games);
         }
-        public List<Games> GetGames()
+        public IActionResult Ps4View(Games objGames)
+        {
+            var games = GetGames(id: 1);
+            return View(games);
+        }
+        public IActionResult XboxView(Games objGames)
+        {
+            var games = GetGames(id: 2);
+            return View(games);
+        }
+        public IActionResult NintendoView(Games objGames)
+        {
+            var games = GetGames(id: 3);
+            return View(games);
+        }
+        public List<Games> GetGames( int id)
         {
             List<Games> games = new List<Games>();
             var game = new Games(); 
-            var query = "SELECT * FROM games";
+            var query = "SELECT * FROM games WHERE platformId =" + id;
             var sc = new SqlConnection(_connectionString);
 
             sc.Open();
@@ -52,20 +67,7 @@ namespace GameShopDemirci.Controllers
             }
 
             return games;
-        }
-
-        public IActionResult Ps4View()
-        {
-            return View();
-        }
-        public IActionResult XboxView()
-        {
-            return View();
-        }
-        public IActionResult NintendoView()
-        {
-            return View();
-        }
+        } 
 
     }
 }

@@ -1,7 +1,27 @@
-﻿
-@{
-    ViewData["Title"] = "Ps4View";
+﻿@model List<Games>
+
+<link href="~/css/contact.css" rel="stylesheet" />
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
 }
 
-<h2>Ps4View</h2>
+@{
+    foreach (var game in Model)
+    {
+        <div class="container-games">
 
+            <div id="games">
+                <a href="#">
+                    <img  src="~/images/Games/@game.gameImg" width="200" height="300" />
+                </a>
+        
+                <label> @game.gameName </label>
+                <label> @game.gameDescription</label>
+                <label> €@game.gamePrice</label>
+                <a href="#">
+                    <label class="hvr-rectangle-out"> Add to cart</label>
+                </a>
+            </div> 
+        </div>
+    }
+}
