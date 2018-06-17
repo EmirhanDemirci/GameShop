@@ -1,0 +1,29 @@
+﻿@model Accounts
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="col-lg-12">
+                <form method="post">
+                    <div class="well">
+                        <div class="form-group">
+                            @* <h3 style="line-height: 20%;"><i class="fa fa-home fa-1x" style="line-height: 6%; color: #339966"></i> FirstName:</h3> *@
+                            <label asp-for="UserName"></label>
+                            <input asp-for="UserName" class="form-control" placeholder="Fill firstname" data-val="true" />
+                            <span asp-validation-for="UserName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            @* <h3 style="line-height: 20%;"><i class="fa fa-envelope fa-1x" style="line-height: 6%; color: #339966"></i> LastName:</h3> *@
+                            <label asp-for="Password"></label>
+                            <input asp-for="Password" type="password" class="form-control" placeholder="Fill lastname" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <button class="btn btn-default" type="submit">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

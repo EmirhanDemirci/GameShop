@@ -33,16 +33,43 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <a asp-controller="Cart" asp-action="Index" class="hvr-buzz-out btn btn-default btn-sm shopping2">
+                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                    </a>
+                    <li>
+                        @{
+                            if (Accounts.Account == null)
+                            {
+                                <a onclick="example_ajax_request()" asp-area="" asp-controller="Login" asp-action="Login">Login</a>
+                            }
+                            else
+                            {
+                                <a onclick="example_ajax_request()" asp-area="" asp-controller="Login" asp-action="Logout">Logout</a>
+                            }
+
+                        }
+
+                    </li>
+
+                    <li>
+                        @{
+                            if (Accounts.Account == null)
+                            {
+                                <a asp-area="" asp-controller="Login" asp-action="Register">Register</a>
+                            }
+                        }
+
+                    </li>
                    
                 </ul>
                
-                <button type="button" class="btn btn-default btn-sm shopping2">
-                    <a href="#"class="hvr-buzz-out">
-                    <span class="glyphicon glyphicon-shopping-cart"></span>
-                    </a>
-                </button>
+                     
               
             </div>
+            <li class="logging">
+                Logged in as @TempData["Message"]
+                @ViewData["UserName"]
+            </li>
         </div>
     </nav>
     <div class="container body-content">

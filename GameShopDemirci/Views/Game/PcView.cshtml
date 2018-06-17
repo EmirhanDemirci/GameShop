@@ -18,9 +18,11 @@
         <label> @game.gameName </label>
         <label> @game.gameDescription</label>
         <label> €@game.gamePrice</label>
-        <a href="#">
-        <label class="hvr-rectangle-out"> Add to cart</label>
-        </a>
+        <form asp-action="AddToCart" method="post">
+            <input name="id" value="@game.gameId" hidden />
+            <input name="platformId" value="@game.platformId" hidden/>
+            <button type="submit" class="hvr-rectangle-out">Add to cart</button>
+        </form>
     </div> 
 </div>
     }

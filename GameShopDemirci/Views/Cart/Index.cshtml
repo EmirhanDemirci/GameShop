@@ -1,0 +1,24 @@
+﻿@model CartViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+    @{
+        foreach (var game in Model.Games)
+        {
+            <div id="games">
+                <a href="#">
+                    <img src="~/images/Games/@game.gameImg" width="200" height="300"/>
+                </a>
+                <label> @game.gameName </label>
+                <label> @game.gameDescription</label>
+                <label> €@game.gamePrice</label>
+            </div>
+            
+        }
+        <div class="totalprice">
+            <label>€@Model.TotalPrice</label>
+        </div>
+    }

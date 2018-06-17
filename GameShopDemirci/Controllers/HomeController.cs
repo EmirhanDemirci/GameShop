@@ -12,12 +12,27 @@ namespace GameShopDemirci.Controllers
     {
         public IActionResult Index()
         {
+            if (Accounts.Account != null)
+            {
+                ViewData["Username"] = Accounts.Account.UserName;
+            }
+            if (Accounts.Account == null)
+            {
+                return RedirectToAction("Login", "Login");
+            }
             return View();
         }
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            if (Accounts.Account != null)
+            {
+                ViewData["Username"] = Accounts.Account.UserName;
+            }
+            if (Accounts.Account == null)
+            {
+                return RedirectToAction("Login", "Login");
+            }
 
             return View();
         }
@@ -25,7 +40,14 @@ namespace GameShopDemirci.Controllers
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            if (Accounts.Account != null)
+            {
+                ViewData["Username"] = Accounts.Account.UserName;
+            }
+            if (Accounts.Account == null)
+            {
+                return RedirectToAction("Login", "Login");
+            }
 
             return View();
         }

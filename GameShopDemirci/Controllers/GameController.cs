@@ -12,30 +12,94 @@ namespace GameShopDemirci.Controllers
     public class GameController : Controller
     {
         string _connectionString;
+        private Cart _cart;
 
         public GameController(IConfiguration config)
         {
             _connectionString = config.GetSection("Connection")["MSSQL"];
+            _cart = new Cart(_connectionString);
         }
 
       
         public IActionResult PcView(Games objGames)
         {
+            if (Accounts.Account != null)
+            {
+                ViewData["Username"] = Accounts.Account.UserName;
+            }
+            if (Accounts.Account == null)
+            {
+                return RedirectToAction("Login", "Login");
+            }
             var games = GetGames(id:0);
             return View(games);
+            
+        }
+
+        [HttpPost]
+        public IActionResult AddToCart(int id, int platformId)
+        {
+            if (Accounts.Account != null)
+            {
+                ViewData["Username"] = Accounts.Account.UserName;
+            }
+            if (Accounts.Account == null)
+            {
+                return RedirectToAction("Login", "Login");
+            }
+
+            _cart.AddGame(id);
+
+            switch (platformId)
+            {
+                case 0:
+                    return RedirectToAction("PcView");         
+                case 1:
+                    return RedirectToAction("Ps4View");           
+                case 2:
+                    return RedirectToAction("XboxView");        
+                case 3:
+                    return RedirectToAction("NintendoView");
+                default:
+                    return RedirectToAction("Index", "Home");
+            }
         }
         public IActionResult Ps4View(Games objGames)
         {
+            if (Accounts.Account != null)
+            {
+                ViewData["Username"] = Accounts.Account.UserName;
+            }
+            if (Accounts.Account == null)
+            {
+                return RedirectToAction("Login", "Login");
+            }
             var games = GetGames(id: 1);
             return View(games);
         }
         public IActionResult XboxView(Games objGames)
         {
+            if (Accounts.Account != null)
+            {
+                ViewData["Username"] = Accounts.Account.UserName;
+            }
+            if (Accounts.Account == null)
+            {
+                return RedirectToAction("Login", "Login");
+            }
             var games = GetGames(id: 2);
             return View(games);
         }
         public IActionResult NintendoView(Games objGames)
         {
+            if (Accounts.Account != null)
+            {
+                ViewData["Username"] = Accounts.Account.UserName;
+            }
+            if (Accounts.Account == null)
+            {
+                return RedirectToAction("Login", "Login");
+            }
             var games = GetGames(id: 3);
             return View(games);
         }
