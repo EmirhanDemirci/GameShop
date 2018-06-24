@@ -8,22 +8,22 @@
 @{
     foreach (var game in Model)
     {
-<div class="container-games">
-
-    <div id="games">
-        <a href="#">
-            <img  src="~/images/Games/@game.gameImg" width="200" height="300" />
-        </a>
-        
-        <label> @game.gameName </label>
-        <label> @game.gameDescription</label>
-        <label> €@game.gamePrice</label>
-        <form asp-action="AddToCart" method="post">
-            <input name="id" value="@game.gameId" hidden />
-            <input name="platformId" value="@game.platformId" hidden/>
-            <button type="submit" class="hvr-rectangle-out">Add to cart</button>
-        </form>
-    </div> 
-</div>
+        <div class="container-games">
+            <div id="games">
+                <form asp-action="GameView" method="get">
+                    <input name="id" value="@game.gameId" hidden />
+                    <button type="submit">
+                        <img src="~/images/Games/@game.gameImg" width="200" height="300" />
+                    </button>
+                </form>
+                <label> @game.gameName </label> <br />
+                <label> €@game.gamePrice</label>
+                <form asp-action="AddToCart" method="post">
+                    <input name="id" value="@game.gameId" hidden />
+                    <input name="platformId" value="@game.platformId" hidden/>
+                    <button type="submit" class="hvr-rectangle-out">Add to cart</button>
+                </form>
+            </div>
+        </div>
     }
 }

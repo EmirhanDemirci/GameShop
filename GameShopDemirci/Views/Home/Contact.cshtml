@@ -1,17 +1,43 @@
-﻿@{
-    ViewData["Title"] = "Contact";
+﻿@model Users
+<link href="~/css/contact.css" rel="stylesheet" />
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-
-<address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<div class="page-header">
+    <h1>Contact <small>Try making contact</small></h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="col-lg-12">
+                <form method="post">
+                    <div class="well">
+                        <div class="form-group">
+                            @* <h3 style="line-height: 20%;"><i class="fa fa-home fa-1x" style="line-height: 6%; color: #339966"></i> FirstName:</h3> *@
+                            <label asp-for="FirstName"></label>
+                            <input asp-for="FirstName" class="form-control" placeholder="Fill firstname" data-val="true" />
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            @* <h3 style="line-height: 20%;"><i class="fa fa-envelope fa-1x" style="line-height: 6%; color: #339966"></i> LastName:</h3> *@
+                            <label asp-for="LastName"></label>
+                            <input asp-for="LastName" class="form-control" placeholder="Fill lastname" />
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            @* <h3 style="line-height: 20%;"><i class="fa fa-user fa-1x" style="line-height: 6%; color: #339966"></i> Email:</h3> *@
+                            <label asp-for="Email"></label>
+                            <input asp-for="Email" type="email" class="form-control" placeholder="Fill email" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <button type="submit">Send!</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2485.0894696456403!2d5.645370315956701!3d51.47487202090167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c723e2a757644d%3A0x6d6d5da11ea740d0!2s1e+Haagstraat%2C+Helmond!5e0!3m2!1snl!2snl!4v1525372644330" width="565" height="430" frameborder="0" style="border: 0" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>

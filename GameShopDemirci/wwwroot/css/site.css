@@ -3,17 +3,27 @@
     padding-bottom: 20px;
 }
 .navbar-inverse {
-    background-color: #ff9933;
+    background-color: black;
 }
 .navbar-inverse .navbar-nav > li > a {
-        color: black;
+        color: white;
     }
 
 .logging {
-    margin-left: 250px;
-    margin-top: 10px;
-    font-size: 20px;
-    color: green
+    margin-left: 1142px;
+    margin-top: 45px;
+    font-size: 30px;
+    width: 378px;
+    color: grey;
+}
+.slide {
+    background: grey;
+    height: 456px;
+}
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-top: 100px;
 }
 .image {
     opacity: 1;
@@ -105,7 +115,7 @@
 }
 /* Rectangle Out */
 .hvr-rectangle-out {
-    background: #ff9933;
+    background: grey;
     margin-right: 80px;
     color: white;
     font-size: 16px;

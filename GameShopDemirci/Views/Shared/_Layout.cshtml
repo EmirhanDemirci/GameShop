@@ -61,18 +61,15 @@
 
                     </li>
                    
-                </ul>
-               
-                     
-              
+                </ul>      
             </div>
-            <li class="logging">
-                Logged in as @TempData["Message"]
-                @ViewData["UserName"]
-            </li>
         </div>
     </nav>
     <div class="container body-content">
+        <div class="logging">
+            Logged in as: @TempData["Message"]
+            @ViewData["UserName"]
+        </div>
         @RenderBody()
     </div>
 
